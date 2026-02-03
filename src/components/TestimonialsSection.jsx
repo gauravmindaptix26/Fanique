@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import gsap from 'gsap'
 import img1 from '../assets/images/Sexy Escort.png'
@@ -6,8 +6,6 @@ import img2 from '../assets/images/Frau sitzt auf Mann.png'
 import img3 from '../assets/images/Paar beim Sex.jpg'
 import img4 from '../assets/images/Reiterstellung.webp'
 import img5 from '../assets/images/Sexy Escort.png'
-
-
 
 const TestimonialsSection = () => {
   const sectionRef = useRef(null)
@@ -69,11 +67,7 @@ const TestimonialsSection = () => {
 
   return (
     <section className="testimonials-section" ref={sectionRef}>
-      <motion.div
-        className="testimonials-watermark"
-        style={{ x: watermarkX }}
-        aria-hidden="true"
-      >
+      <motion.div className="testimonials-watermark" style={{ x: watermarkX }} aria-hidden="true">
         KUNDENSTIMMEN
       </motion.div>
 
@@ -88,8 +82,7 @@ const TestimonialsSection = () => {
           KUNDENSTIMMEN
         </p>
         <h2 className="testimonials-title" data-testimonials="fly-right">
-          Diese 0.1% Creators vertrauen unserer{' '}
-          <span>OnlyFans Agentur</span>
+          Diese 0.1% Creators vertrauen unserer <span>OnlyFans Agentur</span>
         </h2>
       </motion.div>
 
@@ -102,11 +95,7 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
         >
-          <motion.div
-            className="testimonials-card-text"
-            style={{ x: watermarkX }}
-            aria-hidden="true"
-          >
+          <motion.div className="testimonials-card-text" style={{ x: watermarkX }} aria-hidden="true">
             KUNDENSTIMMEN
           </motion.div>
           <div className="testimonials-card-images">
