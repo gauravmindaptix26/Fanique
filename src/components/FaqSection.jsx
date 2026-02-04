@@ -119,7 +119,7 @@ const faqs = [
 
 const FaqSection = () => {
   const sectionRef = useRef(null)
-  const [openIndex, setOpenIndex] = useState(0)
+  const [openIndex, setOpenIndex] = useState(-1)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
