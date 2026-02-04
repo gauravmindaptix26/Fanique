@@ -66,10 +66,10 @@ const PlatformsSection = () => {
           <h2 className="platforms-title" data-platforms="fly-right">
             Content Recycling war noch nie <span>so einfach.</span>
           </h2>
-          <p className="platforms-body" data-platforms="fly-left">
-            SheX ist die einzige OnlyFans-Agentur, mit der du deine Inhalte
-            gleichzeitig auf funf Plattformen verkaufen kannst - so kannst du dein
-            Einkommen verfunffachen.
+            <p className="platforms-body" data-platforms="fly-left">
+              Fanique Primus ist die einzige OnlyFans-Agentur, mit der du deine Inhalte
+              gleichzeitig auf funf Plattformen verkaufen kannst - so kannst du dein
+              Einkommen verfunffachen.
           </p>
         </motion.div>
 
@@ -89,7 +89,7 @@ const PlatformsSection = () => {
             <span className="platforms-line platforms-line--right" />
           </div>
           <div className="platforms-node platforms-node--core">
-            <span className="platforms-logo">SHE</span>
+            <span className="platforms-logo">FRA</span>
           </div>
           <div className="platforms-branch platforms-branch--left">
             <div className="platforms-node platforms-node--orange">M</div>

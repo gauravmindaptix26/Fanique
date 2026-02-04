@@ -31,9 +31,9 @@ const AboutSection = () => {
             <span className="about-hero-title-top">OnlyFans Agentur</span>
             <span className="about-hero-title-bottom">Erfahrungen</span>
           </h2>
-          <p className="about-hero-sub" data-about="fade">
-            SheX Agency
-          </p>
+            <p className="about-hero-sub" data-about="fade">
+              Fanique Primus
+            </p>
         </div>
       </div>
     </section>

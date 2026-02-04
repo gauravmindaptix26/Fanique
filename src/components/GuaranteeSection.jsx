@@ -51,10 +51,10 @@ const GuaranteeSection = () => (
         viewport={{ once: true }}
       >
         <div className="laurel" aria-hidden="true" />
-        <div className="signature-text">
-          <p className="signature-name">Marvin K.</p>
-          <p className="signature-role">CEO @ SheX Agency</p>
-        </div>
+          <div className="signature-text">
+            <p className="signature-name">Marvin K.</p>
+            <p className="signature-role">CEO @ Fanique Primus</p>
+          </div>
         <div className="signature-script" aria-hidden="true">
           Marvin K.
         </div>

@@ -29,11 +29,11 @@ const ComparisonSection = () => (
         transition={{ duration: 0.7, delay: 0.1 }}
         viewport={{ once: true }}
       >
-        <div className="comparison-head">
-          <div />
-          <div className="comparison-col comparison-col--she">SheX</div>
-          <div className="comparison-col">Other Agencies</div>
-        </div>
+          <div className="comparison-head">
+            <div />
+            <div className="comparison-col comparison-col--she">Fanique Primus</div>
+            <div className="comparison-col">Other Agencies</div>
+          </div>
 
         {rows.map((row) => (
           <div key={row} className="comparison-row">

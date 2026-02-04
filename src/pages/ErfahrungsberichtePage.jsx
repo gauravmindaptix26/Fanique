@@ -101,7 +101,7 @@ const ErfahrungsberichtePage = () => {
           {cards.map((card) => (
             <article key={card.name} className="erf-card" data-erf="fade">
               <div className="erf-card-top">
-                <span className="erf-mark">SHE</span>
+                <span className="erf-mark">FRA</span>
                 <h3 className="erf-card-title">Kundenstimme</h3>
               </div>
               <p className="erf-card-copy">{card.copy}</p>

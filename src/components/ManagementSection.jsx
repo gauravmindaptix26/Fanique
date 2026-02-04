@@ -124,7 +124,7 @@ const ManagementSection = () => {
                 exit={{ opacity: 0, scale: 0.96 }}
                 transition={{ duration: 0.4 }}
               >
-                <div className="orbit-core">SHE</div>
+                <div className="orbit-core">FRA</div>
                 <div className="orbit-ring">
                   <span className="orbit-dot orbit-dot--t" aria-hidden="true">
                     <svg viewBox="0 0 24 24" className="orbit-icon">
