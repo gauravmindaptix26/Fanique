@@ -71,8 +71,8 @@ const LogoSection = () => {
           logos={topLogos}
           speed={100}
           direction="left"
-          logoHeight={46}
-          gap={54}
+          logoHeight={40}
+          gap={40}
           hoverSpeed={80}
           scaleOnHover
           fadeOut
@@ -85,8 +85,8 @@ const LogoSection = () => {
           logos={bottomLogos}
           speed={90}
           direction="left"
-          logoHeight={50}
-          gap={64}
+          logoHeight={44}
+          gap={48}
           hoverSpeed={70}
           scaleOnHover
           fadeOut

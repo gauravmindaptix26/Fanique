@@ -8,9 +8,10 @@ import HomePage from './pages/HomePage'
 const AppShell = () => {
   const location = useLocation()
   const isErf = location.pathname === '/erfahrungsberichte'
+  const isHome = location.pathname === '/'
 
   return (
-    <div className={`page${isErf ? ' page--erf' : ''}`}>
+    <div className={`page${isErf ? ' page--erf' : ''}${isHome ? ' page--home' : ''}`}>
       <Header />
 
       <main>

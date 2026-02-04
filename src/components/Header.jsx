@@ -5,9 +5,9 @@ import logo from '../assets/images/fanique_white_text.png'
 const Header = () => (
   <header className="nav-header">
     <div className="nav-shell">
-      <div className="flex items-center gap-3">
+      <NavLink className="flex items-center gap-3" to="/">
         <img className="nav-logo-image" src={logo} alt="Fanique Primus" />
-      </div>
+      </NavLink>
       <nav className="nav-links">
         {navItems.map((item) => {
           const isRoute = item.href.startsWith('/')
