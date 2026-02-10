@@ -3971,11 +3971,14 @@ html {
   }
 
   .video-card {
-    width: min(360px, 92vw);
+    width: min(420px, 94vw);
+    margin-top: 2rem;
   }
 
   .video-frame {
-    width: min(360px, 92vw);
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 3 / 4;
   }
 
   .guarantee-card {
@@ -4075,6 +4078,23 @@ html {
 @media (max-width: 520px) {
   .hero-headline {
     font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+
+  .video-card {
+    width: 100%;
+    gap: 1.2rem;
+  }
+
+  .video-frame {
+    max-width: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: 22px;
+  }
+
+  .video-media {
+    border-radius: 22px;
+    object-fit: contain;
+    background: #0b0b0b;
   }
 
   .hero-tagline {
