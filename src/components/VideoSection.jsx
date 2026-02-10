@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion'
 import gsap from 'gsap'
 import TextType from './TextType'
-import demoVideo from '../assets/images/87e0e467330842c298be85bfdae7b861.mp4'
+import demoVideo from '../assets/images/766gh.mp4'
 
 const VideoSection = () => {
   const sectionRef = useRef(null)
