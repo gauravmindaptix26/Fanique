@@ -326,6 +326,19 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: -1px;
+  box-shadow: 0 -1px 0 #000000;
+}
+
+.globe-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #000000;
+  z-index: 2;
 }
 
 .globe-heading {
