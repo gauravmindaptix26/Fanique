@@ -35,7 +35,7 @@ const StatsCtaSection = () => {
         </div>
 
         <p className="stats-subline">
-          Jetzt garantiert wachsen. <span className="stats-signature">Marvin K.</span>
+          Jetzt garantiert wachsen.
         </p>
 
         <motion.h2
