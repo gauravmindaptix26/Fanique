@@ -1,6 +1,7 @@
 import HeroSection from '../components/HeroSection'
 import LogoSection from '../components/LogoSection'
 import VideoSection from '../components/VideoSection'
+import GlobeSection from '../components/GlobeSection'
 import GuaranteeSection from '../components/GuaranteeSection'
 import TestimonialsSection from '../components/TestimonialsSection'
 import ManagementSection from '../components/ManagementSection'
@@ -17,6 +18,7 @@ const HomePage = () => (
     <HeroSection />
     <LogoSection />
     <VideoSection />
+    <GlobeSection />
     <GuaranteeSection />
     <TestimonialsSection />
     <ManagementSection />

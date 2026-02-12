@@ -1,7 +1,7 @@
 export const navItems = [
   { label: 'Erfahrung', href: '#' },
   { label: 'Erfahrungsberichte', href: '/erfahrungsberichte' },
-  { label: 'Einkommensrechner', href: '#' },
+  { label: 'Einkommensrechner', href: '/einkommensrechner' },
   { label: 'Ergebnisse', href: '#' },
   { label: 'Dienstleistungen', href: '#' },
   { label: 'Videobeweis', href: '#' },

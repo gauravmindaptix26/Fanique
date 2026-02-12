@@ -8,6 +8,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import ErfahrungsberichtePage from './pages/ErfahrungsberichtePage'
 import HomePage from './pages/HomePage'
+import EarningsCalculatorPage from './pages/EarningsCalculatorPage'
 
 const AppShell = () => {
   const location = useLocation()
@@ -44,6 +45,17 @@ const AppShell = () => {
     }
   }, [])
 
+  useEffect(() => {
+    if (!location.hash) return
+    const id = location.hash.replace('#', '')
+    const target = document.getElementById(id)
+    if (!target) return
+    const timer = setTimeout(() => {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 60)
+    return () => clearTimeout(timer)
+  }, [location])
+
   return (
     <div className={`page${isErf ? ' page--erf' : ''}${isHome ? ' page--home' : ''}`}>
       <CustomCursor />
@@ -52,6 +64,7 @@ const AppShell = () => {
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/einkommensrechner" element={<EarningsCalculatorPage />} />
           <Route path="/erfahrungsberichte" element={<ErfahrungsberichtePage />} />
         </Routes>
       </main>

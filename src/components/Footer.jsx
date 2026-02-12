@@ -105,7 +105,7 @@ const Footer = () => {
           <div className="fp-col">
             <p className="fp-title">Ressourcen</p>
             <a href="#resources">Modellregistrierung</a>
-            <a href="#resources">Einkommensrechner</a>
+            <a href="/einkommensrechner">Einkommensrechner</a>
             <a href="#resources">Erfahrung</a>
             <a href="#resources">Dienstleistungen</a>
             <a href="#resources">Kontakt</a>
