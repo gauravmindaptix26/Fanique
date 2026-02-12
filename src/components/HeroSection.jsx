@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
 import BlurText from './BlurText'
-import heroVideoA from '../assets/images/33e.mp4'
+import heroVideoA from '../assets/images/AI.mp4'
 import heroVideoB from '../assets/images/23.mp4'
 import heroVideoC from '../assets/images/grok-video-1cdb930c-13d0-4bfe-95ee-9245892645d7.mp4'
-import heroVideoD from '../assets/images/Success .mp4'
+import heroVideoD from '../assets/images/Success and Growth new.mp4'
 
 const HeroSection = () => (
   <section className="hero-showcase hero-showcase--text hero-showcase--split">

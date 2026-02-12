@@ -5,7 +5,6 @@ const clamp = (value, min, max) => Math.min(Math.max(value, min), max)
 const platformOptions = [
   'OnlyFans',
   '4based',
-  'fanvue',
   'more',
   'Fancentro',
   'MALOUM',
@@ -130,6 +129,7 @@ const EarningsCalculatorSection = () => {
                       checked={platforms[platform]}
                       onChange={() => togglePlatform(platform)}
                     />
+                    <span className="earnings-checkmark" aria-hidden="true" />
                   </label>
                 ))}
               </div>

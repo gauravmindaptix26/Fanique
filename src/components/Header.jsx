@@ -2,9 +2,11 @@ import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { navItems } from '../data/content'
 import logo from '../assets/images/fanique_white_text.png'
+import { useAuth } from '../context/AuthContext'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const { user, isAuthenticated, logout } = useAuth()
 
   return (
     <header className="nav-header">
@@ -31,9 +33,21 @@ const Header = () => {
           })}
         </nav>
         <div className="nav-actions">
-          <button className="nav-login-btn" type="button">
-            Login
-          </button>
+          {isAuthenticated && user && (
+            <div className="nav-user" aria-live="polite">
+              <span>Authenticated</span>
+              <strong>{user.name}</strong>
+            </div>
+          )}
+          {isAuthenticated ? (
+            <button className="nav-login-btn" type="button" onClick={logout}>
+              Logout
+            </button>
+          ) : (
+            <NavLink className="nav-login-btn" to="/auth">
+              Login
+            </NavLink>
+          )}
           <button
             className="nav-toggle"
             type="button"
@@ -65,9 +79,22 @@ const Header = () => {
             </LinkTag>
           )
         })}
-        <button className="nav-mobile-cta" type="button" onClick={() => setIsOpen(false)}>
-          Login
-        </button>
+        {isAuthenticated ? (
+          <button
+            className="nav-mobile-cta"
+            type="button"
+            onClick={() => {
+              logout()
+              setIsOpen(false)
+            }}
+          >
+            Logout
+          </button>
+        ) : (
+          <NavLink className="nav-mobile-cta" to="/auth" onClick={() => setIsOpen(false)}>
+            Login
+          </NavLink>
+        )}
       </div>
     </header>
   )

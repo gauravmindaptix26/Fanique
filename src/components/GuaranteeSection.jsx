@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import CurvedLoop from './CurvedLoop'
 
 const GuaranteeSection = () => (
-  <section className="guarantee-section">
+  <section className="guarantee-section" id="erfahrung">
     <motion.div
       className="guarantee-card"
       initial={{ opacity: 0, y: 24 }}

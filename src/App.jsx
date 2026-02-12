@@ -1,14 +1,18 @@
 import './App.css'
 import 'lenis/dist/lenis.css'
-import { useEffect } from 'react'
+import { Suspense, lazy, useEffect } from 'react'
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 import Lenis from 'lenis'
 import CustomCursor from './components/CustomCursor'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import ErfahrungsberichtePage from './pages/ErfahrungsberichtePage'
-import HomePage from './pages/HomePage'
-import EarningsCalculatorPage from './pages/EarningsCalculatorPage'
+import { AuthProvider } from './context/AuthContext'
+
+const HomePage = lazy(() => import('./pages/HomePage'))
+const EarningsCalculatorPage = lazy(() => import('./pages/EarningsCalculatorPage'))
+const ErfahrungsberichtePage = lazy(() => import('./pages/ErfahrungsberichtePage'))
+const ErgebnissePage = lazy(() => import('./pages/ErgebnissePage'))
+const AuthPage = lazy(() => import('./pages/AuthPage'))
 
 const AppShell = () => {
   const location = useLocation()
@@ -62,11 +66,15 @@ const AppShell = () => {
       <Header />
 
       <main>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/einkommensrechner" element={<EarningsCalculatorPage />} />
-          <Route path="/erfahrungsberichte" element={<ErfahrungsberichtePage />} />
-        </Routes>
+        <Suspense fallback={<div className="page-loading">Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/einkommensrechner" element={<EarningsCalculatorPage />} />
+            <Route path="/erfahrungsberichte" element={<ErfahrungsberichtePage />} />
+            <Route path="/ergebnisse" element={<ErgebnissePage />} />
+            <Route path="/auth" element={<AuthPage />} />
+          </Routes>
+        </Suspense>
       </main>
 
       <Footer />
@@ -77,7 +85,9 @@ const AppShell = () => {
 function App() {
   return (
     <BrowserRouter>
-      <AppShell />
+      <AuthProvider>
+        <AppShell />
+      </AuthProvider>
     </BrowserRouter>
   )
 }
