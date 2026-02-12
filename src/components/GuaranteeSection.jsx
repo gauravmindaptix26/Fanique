@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import CurvedLoop from './CurvedLoop'
 
 const GuaranteeSection = () => (
   <section className="guarantee-section">
@@ -42,7 +43,6 @@ const GuaranteeSection = () => (
         datengetriebenen Entscheidungen sorgen dafuer, dass dein Erfolg planbar
         wird. Dein Wachstum ist unser Versprechen.*
       </motion.p>
-
       <motion.div
         className="guarantee-signature"
         initial={{ opacity: 0, y: 16 }}
@@ -50,43 +50,39 @@ const GuaranteeSection = () => (
         transition={{ duration: 0.6, delay: 0.4 }}
         viewport={{ once: true }}
       >
-        <div className="laurel" aria-hidden="true" />
-          <div className="signature-text">
-            <p className="signature-name">Marvin K.</p>
-            <p className="signature-role">CEO @ Fanique Primus</p>
-          </div>
-        <div className="signature-script" aria-hidden="true">
-          Marvin K.
+        <div className="laurel-stack" aria-hidden="true">
+          <div className="laurel" />
+          <div className="laurel" />
+          <div className="laurel" />
         </div>
-        <div className="laurel laurel--right" aria-hidden="true" />
+        <div className="signature-spacer" aria-hidden="true" />
+        <div className="laurel-stack laurel-stack--right" aria-hidden="true">
+          <div className="laurel laurel--right" />
+          <div className="laurel laurel--right" />
+          <div className="laurel laurel--right" />
+        </div>
       </motion.div>
 
       <motion.div
-        className="guarantee-actions"
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.5 }}
-        viewport={{ once: true }}
-      >
-        <motion.button
-          className="guarantee-cta"
-          whileHover={{ y: -2, scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-          transition={{ type: 'spring', stiffness: 240, damping: 16 }}
-        >
-          Anfragen
-        </motion.button>
-      </motion.div>
-
-      <motion.h3
         className="guarantee-footline"
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.6 }}
         viewport={{ once: true }}
       >
-        Es geht um <span>dich.</span>
-      </motion.h3>
+        <CurvedLoop
+          marqueeText="Es geht um dich. âœ¦"
+          speed={1.2}
+          curveAmount={140}
+          direction="right"
+          interactive
+        />
+        <button className="guarantee-cta guarantee-cta--center" type="button">
+          Anfragen
+        </button>
+      </motion.div>
+
+      <p className="signature-role guarantee-role">CEO @ Fanique Primus</p>
 
       <motion.div
         className="guarantee-grid"
@@ -100,7 +96,7 @@ const GuaranteeSection = () => (
         </p>
         <p className="guarantee-item">
           Du willst Menschen, die wissen, wie du dein volles
-          <span> Potenzial ausschöpfst.</span>
+          <span> Potenzial ausschÃ¶pfst.</span>
         </p>
         <p className="guarantee-item">
           Du willst mit Menschen arbeiten, die in der Lage sind, deinen

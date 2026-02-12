@@ -45,7 +45,7 @@ const LogoLoop = ({
           >
             {logo.node}
             {logo.src ? (
-              <img src={logo.src} alt={logo.alt || ''} />
+              <img src={logo.src} alt={logo.alt || ''} loading="lazy" decoding="async" />
             ) : null}
             {!logo.node && !logo.src ? (
               <span className={logo.className}>{logo.text}</span>
@@ -61,7 +61,7 @@ const LogoLoop = ({
           >
             {logo.node}
             {logo.src ? (
-              <img src={logo.src} alt="" />
+              <img src={logo.src} alt="" loading="lazy" decoding="async" />
             ) : null}
             {!logo.node && !logo.src ? (
               <span className={logo.className}>{logo.text}</span>

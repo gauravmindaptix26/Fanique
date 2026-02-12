@@ -1,5 +1,9 @@
 import './App.css'
+import 'lenis/dist/lenis.css'
+import { useEffect } from 'react'
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
+import Lenis from 'lenis'
+import CustomCursor from './components/CustomCursor'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ErfahrungsberichtePage from './pages/ErfahrungsberichtePage'
@@ -10,8 +14,39 @@ const AppShell = () => {
   const isErf = location.pathname === '/erfahrungsberichte'
   const isHome = location.pathname === '/'
 
+  useEffect(() => {
+    const prefersReduced =
+      typeof window !== 'undefined' &&
+      window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    if (prefersReduced) return
+
+    const lenis = new Lenis({
+      duration: 2.2,
+      smoothWheel: true,
+      smoothTouch: true,
+      touchMultiplier: 1.1,
+      lerp: 0.08,
+      easing: t => 1 - Math.pow(1 - t, 3),
+    })
+
+    let rafId
+    const raf = time => {
+      lenis.raf(time)
+      rafId = requestAnimationFrame(raf)
+    }
+    rafId = requestAnimationFrame(raf)
+
+    return () => {
+      cancelAnimationFrame(rafId)
+      lenis.destroy()
+    }
+  }, [])
+
   return (
     <div className={`page${isErf ? ' page--erf' : ''}${isHome ? ' page--home' : ''}`}>
+      <CustomCursor />
       <Header />
 
       <main>

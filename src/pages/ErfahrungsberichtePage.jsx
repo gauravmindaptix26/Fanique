@@ -106,7 +106,7 @@ const ErfahrungsberichtePage = () => {
               </div>
               <p className="erf-card-copy">{card.copy}</p>
               <div className="erf-media">
-                <img src={card.image} alt={card.name} />
+                <img src={card.image} alt={card.name} loading="lazy" decoding="async" />
                 <span className="erf-play" aria-hidden="true" />
                 <span className={`erf-name erf-name--${card.namePosition}`}>
                   {card.name}
@@ -149,11 +149,11 @@ const ErfahrungsberichtePage = () => {
           </h3>
           <div className="erf-growth-rating">
             <div className="erf-growth-avatars" aria-hidden="true">
-              <img className="erf-growth-avatar" src={img1} alt="" />
-              <img className="erf-growth-avatar" src={img2} alt="" />
-              <img className="erf-growth-avatar" src={img3} alt="" />
-              <img className="erf-growth-avatar" src={img4} alt="" />
-              <img className="erf-growth-avatar" src={img5} alt="" />
+              <img className="erf-growth-avatar" src={img1} alt="" loading="lazy" decoding="async" />
+              <img className="erf-growth-avatar" src={img2} alt="" loading="lazy" decoding="async" />
+              <img className="erf-growth-avatar" src={img3} alt="" loading="lazy" decoding="async" />
+              <img className="erf-growth-avatar" src={img4} alt="" loading="lazy" decoding="async" />
+              <img className="erf-growth-avatar" src={img5} alt="" loading="lazy" decoding="async" />
             </div>
             <div className="erf-growth-review">
               <div className="erf-growth-review-title">Bestbewertet!</div>
