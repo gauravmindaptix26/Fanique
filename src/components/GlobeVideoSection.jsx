@@ -1,8 +1,16 @@
+import { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import globeVideo from '../assets/images/53.mp4'
 
 const GlobeVideoSection = () => {
   const { t } = useTranslation()
+  const videoRef = useRef(null)
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.5
+    }
+  }, [])
 
   return (
     <section className="globe-video-section">
@@ -23,6 +31,7 @@ const GlobeVideoSection = () => {
         <div className="globe-video-media">
           <div className="globe-video-frame">
             <video
+              ref={videoRef}
               className="globe-video-player"
               src={globeVideo}
               loop
