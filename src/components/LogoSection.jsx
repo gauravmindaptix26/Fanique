@@ -1,5 +1,6 @@
-﻿import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import gsap from 'gsap'
 import LogoLoop from './LogoLoop'
 
@@ -21,6 +22,7 @@ const bottomLogos = [
 ]
 
 const LogoSection = () => {
+  const { t } = useTranslation()
   const sectionRef = useRef(null)
 
   useEffect(() => {
@@ -77,7 +79,7 @@ const LogoSection = () => {
           scaleOnHover
           fadeOut
           fadeOutColor="#070707"
-          ariaLabel="Partner logos"
+          ariaLabel={t('logoSection.partnersAria')}
           className="logo-loop--top"
           data-logo="fly-left"
         />
@@ -91,7 +93,7 @@ const LogoSection = () => {
           scaleOnHover
           fadeOut
           fadeOutColor="#070707"
-          ariaLabel="Press logos"
+          ariaLabel={t('logoSection.pressAria')}
           className="logo-loop--bottom"
           data-logo="fly-right"
         />

@@ -1,0 +1,575 @@
+{
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "de": "Deutsch"
+  },
+  "common": {
+    "loading": "Loading..."
+  },
+  "nav": {
+    "experience": "Experience",
+    "testimonials": "Testimonials",
+    "calculator": "Income Calculator",
+    "results": "Results",
+    "services": "Services",
+    "proof": "Video Proof",
+    "contact": "Contact",
+    "login": "Login",
+    "logout": "Logout",
+    "authenticated": "Authenticated"
+  },
+  "hero": {
+    "tagline": "ANONYMOUS & WITHOUT PROMO IS POSSIBLE",
+    "headline": {
+      "line1": "Your last OnlyFans",
+      "line2": "Agency. Promised."
+    },
+    "body": "Tired of empty promises, poor communication, and fake chatting? Benefit from authentic management, 24/7 support, and guaranteed growth.",
+    "points": [
+      "Fair contracts",
+      "Profit growth despite revenue share",
+      "5+ platforms"
+    ],
+    "cta": "Apply"
+  },
+  "video": {
+    "title": "Looking for a serious OnlyFans agency?",
+    "subtitle": "Watch this video:",
+    "cta": "Apply"
+  },
+  "globe": {
+    "weAre": "WE ARE",
+    "global": "GLOBAL"
+  },
+  "globeVideo": {
+    "tag": "🚀 Project Demo Overview",
+    "title": "See the complete working process step by step.",
+    "body": "This video shows the live implementation, features, and user interaction of the project interface.",
+    "ctaPrimary": "View Details",
+    "ctaSecondary": "Get Started"
+  },
+  "guarantee": {
+    "tag": "GUARANTEE*",
+    "title": "Double",
+    "titleAccent": "or Nothing.",
+    "body": "At our OnlyFans agency, results come first. That is why we guarantee doubling your revenue within a maximum of 3 months - otherwise we waive our entire share. That means: if we do not deliver, our work was completely free for you. Our proven strategies, individual support, and data-driven decisions make your success predictable. Your growth is our promise.*",
+    "loop": "It is about you. ✦",
+    "cta": "Apply",
+    "role": "CEO @ Fanique Primus",
+    "items": [
+      "You want to work with people you trust.",
+      "You want people who know how to unlock your full potential.",
+      "You want to work with people who can grow your profit."
+    ]
+  },
+  "testimonials": {
+    "title": "These top 0.1% creators trust our OnlyFans agency",
+    "loopLabel": "TESTIMONIALS",
+    "ratingLabel": "Top rated!",
+    "ratingAria": "5 stars",
+    "ratingSuffix": "by 50+ creators",
+    "ctaPrimary": "Apply",
+    "ctaSecondary": "Testimonials"
+  },
+  "management": {
+    "tabs": [
+      { "key": "management", "label": "Management" },
+      { "key": "marketing", "label": "Marketing" },
+      { "key": "network", "label": "Network" },
+      { "key": "leakProtection", "label": "Leak Protection" }
+    ],
+    "content": {
+      "management": {
+        "kicker": "ONLYFANS",
+        "title": "Management",
+        "body": "We revolutionize OnlyFans account management with exclusive methods built for ambitious creators. Through automations and content recycling, we ensure maximum growth.",
+        "items": [
+          { "title": "Account Development", "text": "Our team automates ... Read more" },
+          { "title": "Profit Growth", "text": "Benefit from exclusive ... Read more" },
+          { "title": "Performance Monitoring", "text": "Daily performance tracking ... Read more" },
+          { "title": "Content Recycling", "text": "We reuse your OnlyFans content ... Read more" }
+        ]
+      },
+      "marketing": {
+        "kicker": "ONLYFANS",
+        "title": "Marketing",
+        "body": "We build organic reach and scale it with data-driven campaigns. Positioning, content plan, and timing work together.",
+        "items": [
+          { "title": "Brand Positioning", "text": "Clear presence for maximum recognition." },
+          { "title": "Viral Content", "text": "Strategic content with high share potential." },
+          { "title": "Traffic Boost", "text": "Targeted impulses for steady growth." },
+          { "title": "Conversion Optimization", "text": "More fans per click with better funnels." }
+        ]
+      },
+      "network": {
+        "kicker": "ONLYFANS",
+        "title": "Network",
+        "body": "We connect you with the right partners, creators, and resources. Synergies build reach, trust, and new revenue streams.",
+        "items": [
+          { "title": "Creator Collaborations", "text": "Targeted collabs with real value." },
+          { "title": "Brand Deals", "text": "Partnerships that fit your profile." },
+          { "title": "Cross-Promo", "text": "Use reach without diluting branding." },
+          { "title": "Community Building", "text": "Long-term loyalty instead of short spikes." }
+        ]
+      },
+      "leakProtection": {
+        "kicker": "ONLYFANS",
+        "title": "Leak Protection",
+        "body": "We protect your content with monitoring, takedowns, and clear processes. Your content stays exclusive and your revenue stable.",
+        "items": [
+          { "title": "Monitoring", "text": "Continuous monitoring of relevant platforms." },
+          { "title": "Takedowns", "text": "Fast removal of violations." },
+          { "title": "Watermarking", "text": "Traceability for every asset." },
+          { "title": "Reputation Protection", "text": "Discreet handling of sensitive content." }
+        ]
+      }
+    },
+    "panel": {
+      "allTime": "All time",
+      "from": "From May 2, 2023",
+      "to": "To Dec 21, 2024",
+      "subscriptions": "Subscriptions",
+      "tips": "Tips",
+      "posts": "Posts",
+      "messages": "Messages",
+      "december": "December, 2024",
+      "november": "November, 2024",
+      "october": "October, 2024"
+    }
+  },
+  "platforms": {
+    "tag": "PLATFORMS",
+    "title": "Content recycling has never been this easy.",
+    "body": "Fanique Primus is the only OnlyFans agency where you can sell your content on five platforms at the same time - that means you can quintuple your income.",
+    "ctaPrimary": "Apply",
+    "ctaSecondary": "All platforms"
+  },
+  "timeline": {
+    "tag": "PROCESS",
+    "title": "How you double your revenue in a maximum of 12 weeks - guaranteed:",
+    "subtitle": "We generate revenue in your account from day 1 of our support.",
+    "steps": [
+      {
+        "title": "Onboarding",
+        "text": "Your point of contact takes the time to get to know you and your goals and explains our tools.",
+        "side": "left"
+      },
+      {
+        "title": "Scaling Phase",
+        "text": "We start our marketing to bring valuable traffic to your profiles. A seamless transition is important to us.",
+        "side": "right"
+      },
+      {
+        "title": "Retention Phase",
+        "text": "Alongside growth, the focus shifts to stability to ensure predictable income. We prioritize fan loyalty over mass processing.",
+        "side": "left"
+      }
+    ],
+    "cta": "Apply"
+  },
+  "comparison": {
+    "title": "Why the best choose us.",
+    "columns": {
+      "ours": "Fanique Primus",
+      "others": "Other Agencies"
+    },
+    "rows": [
+      "Authentic, proven strategies on 5+ platforms",
+      "24/7 support & a dedicated female contact",
+      "Fair contracts, monthly cancellation",
+      "Anonymous and without promo possible",
+      "Leak protection & removal (DMCA takedown) included",
+      "200+ German in-house managers"
+    ],
+    "ctaPrimary": "Apply",
+    "ctaSecondary": "Why us?"
+  },
+  "applicationSteps": {
+    "tag": "APPLICATION",
+    "title": "Your OnlyFans success starts here. Predictable. Step by Step.",
+    "steps": [
+      "Click \"Apply\"",
+      "Fill out the short form.",
+      "We contact you within 24 hours."
+    ],
+    "done": "Done",
+    "cta": "Apply"
+  },
+  "statsCta": {
+    "kicker": "#1 OnlyFans Agency",
+    "subline": "Guaranteed growth - starting now.",
+    "title": "We work monthly with 3-5 new creators. Are you one of them?",
+    "rating": "Top rated!",
+    "ratingSuffix": "by 50+ creators.",
+    "cta": "Apply"
+  },
+  "faq": {
+    "title": "FAQ",
+    "items": [
+      {
+        "q": "What is Fanique Primus?",
+        "a": "Fanique Primus is an agency known for its unique perspective, innovative approach, and dedicated team. Our goal is to promote talent and help them achieve their dreams."
+      },
+      {
+        "q": "What are the goals of Fanique Primus?",
+        "a": "Our managers have the expertise to position you successfully on other platforms as well. Together we build a plan to reach your individual goals."
+      },
+      {
+        "q": "Does Fanique Primus only work in Germany?",
+        "a": "No, we operate worldwide. However, we recommend focusing on US content because growth potential, anonymity, and compensation are often better than in Germany or Europe."
+      },
+      {
+        "q": "How can I make a living from social media?",
+        "a": "Reach is important, but choosing the right niche and partners also matters. Your personal manager helps identify the right opportunities and build the best partnerships."
+      },
+      {
+        "q": "Can I keep my full-time job?",
+        "a": "At the beginning we recommend keeping your current job until you are successful enough in OnlyFans or social media to live from it."
+      },
+      {
+        "q": "What does working with Fanique Primus look like?",
+        "a": "The collaboration starts with an application through our form. After careful review, we contact you within 48 hours."
+      },
+      {
+        "q": "How much time should I plan per week?",
+        "a": "We offer flexible options to optimize collaboration. The time required depends on your reach, planned events, and shoots."
+      },
+      {
+        "q": "What tasks will I be responsible for?",
+        "a": "Tasks vary depending on your preferences. You can create content yourself or delegate it to your manager. The exact split is discussed with your manager."
+      },
+      {
+        "q": "Can I apply again if I was rejected?",
+        "a": "Yes, a re-application is possible if at least one month has passed since the last application. If you have worked on your career in the meantime, your chances are good."
+      },
+      {
+        "q": "How often will I be in contact with my account manager?",
+        "a": "Your manager is available around the clock. Whether daily exchange or weekly calls - communication depends on your needs."
+      },
+      {
+        "q": "Do I need to create and edit the content myself?",
+        "a": "You can create content yourself, but your manager supports you with advice and co-creation of content."
+      },
+      {
+        "q": "Why do I need a manager?",
+        "a": "A manager simplifies your day-to-day, handles organization, builds a network for you, and connects you with relevant people and partners."
+      },
+      {
+        "q": "How do I contact my manager?",
+        "a": "Initial contact happens after your successful application. After that your manager is available anytime for questions and support."
+      },
+      {
+        "q": "How can my channels grow best?",
+        "a": "As an exclusive Fanique Primus talent, you benefit from structured processes and the expertise of our social media specialists."
+      },
+      {
+        "q": "Can my channels be managed independently?",
+        "a": "Yes, we recommend not relying only on OnlyFans. Diversifying across platforms can increase your financial success."
+      },
+      {
+        "q": "Are there additional ways to be more successful?",
+        "a": "We support you comprehensively so you can benefit from our entrepreneurial mindset and not rely on a single income source."
+      },
+      {
+        "q": "Can I stay anonymous and still succeed?",
+        "a": "Yes, anonymity is possible. We have successful strategies that allow high earnings even anonymously."
+      },
+      {
+        "q": "How do you motivate your talent to become more successful?",
+        "a": "Our management program grows with you. We foster a mindset that encourages you to think bigger and set bigger goals."
+      },
+      {
+        "q": "Can I work with you if I am already successful?",
+        "a": "Yes, if you are already successful on social media, we show you how to leverage and expand that advantage."
+      },
+      {
+        "q": "In which cities is Fanique Primus present?",
+        "a": "Our main locations are worldwide."
+      },
+      {
+        "q": "Is there a limit to talents?",
+        "a": "Yes, the number of our exclusive talents is limited. However, we keep expanding our portfolio. Take your chance and apply today."
+      },
+      {
+        "q": "Do you support finding brand partners?",
+        "a": "Together with your manager, you find the right partners. They support you with search, negotiation, and execution of collaborations."
+      }
+    ],
+    "ctaPrimary": "Apply",
+    "ctaSecondary": "All FAQs"
+  },
+  "statsSection": {
+    "items": [
+      { "label": "Average Growth", "value": "3.2x" },
+      { "label": "Response Time", "value": "Under 2 min" },
+      { "label": "Retention Lift", "value": "+48%" }
+    ]
+  },
+  "services": {
+    "kicker": "Core services",
+    "title": "A full stack creator system built to move fast.",
+    "cta": "Download Deck",
+    "items": [
+      {
+        "title": "Audience Strategy",
+        "copy": "Trend mapping, persona shaping, and content positioning built for compounding growth."
+      },
+      {
+        "title": "Creator Ops",
+        "copy": "Daily planning, asset pipelines, and content automation so you stay on top."
+      },
+      {
+        "title": "Revenue Systems",
+        "copy": "Campaign sequencing, upsell flows, and churn prevention designed to scale."
+      }
+    ],
+    "explore": "Explore service"
+  },
+  "process": {
+    "kicker": "How it works",
+    "title": "Strategy, systems, and a relentless feedback loop.",
+    "body": "We combine brand architecture with performance-driven messaging. Every iteration is driven by analytics, not guesswork.",
+    "cta": "Reserve a slot",
+    "steps": [
+      {
+        "title": "Signal Audit",
+        "copy": "We map your current audience data, content heat, and monetization gaps."
+      },
+      {
+        "title": "System Build",
+        "copy": "We deploy offers, scripts, and content cadences for consistent conversion."
+      },
+      {
+        "title": "Momentum Sprint",
+        "copy": "We optimize every week with testing, creative refreshes, and analytics."
+      }
+    ]
+  },
+  "stories": {
+    "kicker": "Creator stories",
+    "title": "Built for the creators who want a legacy.",
+    "cta": "See more",
+    "items": [
+      {
+        "name": "Lena K.",
+        "role": "Lifestyle Creator",
+        "quote": "The strategy shifted everything. The team handled structure while I focused on presence."
+      },
+      {
+        "name": "Rhea M.",
+        "role": "Fitness Creator",
+        "quote": "We doubled our engagement and finally have a predictable launch rhythm."
+      },
+      {
+        "name": "Sana Q.",
+        "role": "Digital Artist",
+        "quote": "Clean branding, powerful messaging, and the support felt premium from day one."
+      }
+    ]
+  },
+  "marquee": {
+    "items": [
+      "Live launch support",
+      "Creator brand kits",
+      "Short-form growth",
+      "Premium community",
+      "Story sequencing"
+    ]
+  },
+  "logoSection": {
+    "partnersAria": "Partner logos",
+    "pressAria": "Press logos"
+  },
+  "footer": {
+    "servicesTitle": "Services",
+    "followTitle": "Follow",
+    "resourcesTitle": "Resources",
+    "contactTitle": "Contact",
+    "contactMeta": "Questions? Answers",
+    "whatsapp": "Message on WhatsApp",
+    "copyright": "Copyright c 2025 FANIQUE PRIMUS",
+    "legal": "Legal Notice",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "serviceLinks": [
+      "Management",
+      "Marketing",
+      "Content recycling",
+      "Leak removal"
+    ],
+    "followLinks": [
+      "Portfolio model",
+      "Case studies",
+      "About us",
+      "Team",
+      "Results"
+    ],
+    "resourceLinks": [
+      "Model registration",
+      "Income calculator",
+      "Experience",
+      "Services",
+      "Contact"
+    ]
+  },
+  "about": {
+    "titleTop": "OnlyFans Agency",
+    "titleBottom": "Experiences",
+    "sub": "Fanique Primus"
+  },
+  "erf": {
+    "loopWord": "TESTIMONIALS",
+    "kicker": "TESTIMONIALS",
+    "titleLine1": "What does a collaboration",
+    "titleLine2": "with us really bring?",
+    "cardTitle": "Client story",
+    "cta": "Apply",
+    "rank": "#1 OnlyFans Agency",
+    "starsAria": "5 stars",
+    "growthTag": "Guaranteed growth now.",
+    "signature": "Marvin K",
+    "growthTitle": "We work monthly with 3-5 new creators. Are you one of them?",
+    "reviewTitle": "Top rated!",
+    "reviewCopy": "by 50+ creators.",
+    "pill": "GROWTH. CONTENT RECYCLING",
+    "cards": [
+      {
+        "name": "Kerstin",
+        "copy": "As an experienced creator, increase profit for 1.5+ years and be treated with respect.",
+        "namePosition": "left"
+      },
+      {
+        "name": "Sofia",
+        "copy": "More time and much more money over 2 years of collaboration.",
+        "namePosition": "right"
+      },
+      {
+        "name": "Laura · Nicole",
+        "copy": "As beginners, achieve a stable monthly income over 1.5 years.",
+        "namePosition": "center"
+      },
+      {
+        "name": "Elisa",
+        "copy": "Anonymous with no time investment, achieve a stable monthly income over 2 years.",
+        "namePosition": "right"
+      },
+      {
+        "name": "Tanya",
+        "copy": "Without prior experience, achieve a stable monthly income over 8 months.",
+        "namePosition": "left"
+      }
+    ]
+  },
+  "results": {
+    "kicker": "Results",
+    "title": "Premium growth, measurable and lasting. Built for modern creator brands.",
+    "sub": "We build systems that align growth, revenue, and brand value. Every strategy is designed to scale.",
+    "ctaPrimary": "Request results",
+    "ctaSecondary": "View strategy",
+    "metricsTitle": "Growth at a premium level",
+    "metricsBody": "Proven systems from strategy, content, and performance.",
+    "casesKicker": "Case Studies",
+    "casesTitle": "What real collaboration delivers",
+    "servicesTitle": "The systems behind the results",
+    "servicesBody": "Luxury branding meets measurable performance.",
+    "before": "Before",
+    "after": "After",
+    "stats": [
+      { "label": "Avg. Revenue Lift", "value": "+3.4x" },
+      { "label": "Client Retention", "value": "91%" },
+      { "label": "Launch Velocity", "value": "< 14 days" },
+      { "label": "Team Response", "value": "< 2 min" }
+    ],
+    "cases": [
+      {
+        "title": "Creator A",
+        "subtitle": "Fashion / Lifestyle",
+        "before": "12k followers",
+        "after": "78k followers",
+        "note": "Monthly revenue stabilized within 6 weeks."
+      },
+      {
+        "title": "Creator B",
+        "subtitle": "Fitness / Coaching",
+        "before": "0.8% conversion",
+        "after": "3.2% conversion",
+        "note": "Offer stack rebuilt with premium retention."
+      },
+      {
+        "title": "Creator C",
+        "subtitle": "Model / Editorial",
+        "before": "$4.2k / mo",
+        "after": "$18.6k / mo",
+        "note": "Upsell flows and content cadence optimized."
+      }
+    ],
+    "services": [
+      {
+        "title": "Premium Positioning",
+        "copy": "Brand story, offer framing, and pricing designed for high-end value."
+      },
+      {
+        "title": "Revenue Engineering",
+        "copy": "Launch cadence, upsell systems, and retention sequences."
+      },
+      {
+        "title": "Content Direction",
+        "copy": "Creative playbooks, shoot briefs, and performance-led feedback."
+      },
+      {
+        "title": "Client Operations",
+        "copy": "Daily management, fan engagement, and data-driven optimization."
+      }
+    ]
+  },
+  "calculator": {
+    "eyebrow": "OnlyFans Earnings Calculator",
+    "title": "OnlyFans Earnings Calculator",
+    "subtitle": "Get a clear breakdown of your potential earnings.",
+    "followersTitle": "Social Media Followers",
+    "followersBody": "Total followers across all your social media accounts.",
+    "hoursTitle": "Daily Content Creation Hours",
+    "hoursBody": "How many hours per day do you want to spend creating content?",
+    "platformsTitle": "Which platforms should we manage for you?",
+    "annual": "Annual Revenue",
+    "quarterly": "Quarterly",
+    "monthly": "Monthly",
+    "resultCopy": "Your estimated yearly earnings if you work with Fanique Primus, based on the experience of our creators. For more details, please see our terms and conditions.",
+    "ctaTitle": "Start earning today",
+    "ctaButton": "Inquire now",
+    "ratingLeft": "70+ reviews",
+    "ratingScore": "4.9",
+    "footnote": "The displayed earnings are based on experience values and do not represent a guarantee of income."
+  },
+  "auth": {
+    "kicker": "Secure Access",
+    "titleLogin": "Welcome back.",
+    "titleRegister": "Create account.",
+    "sub": "Luxury, clarity, performance. Access your exclusive area.",
+    "login": "Login",
+    "register": "Register",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "password": "Password",
+    "passwordConfirm": "Repeat password",
+    "show": "Show",
+    "hide": "Hide",
+    "passwordStrength": "Password strength",
+    "passwordMismatch": "Passwords do not match.",
+    "strength": ["Too weak", "Weak", "Medium", "Strong", "Very strong"],
+    "authenticatedAs": "Authenticated as",
+    "localOnly": "Your data stays stored locally.",
+    "errors": {
+      "passwordLength": "At least 8 characters.",
+      "passwordUpper": "At least 1 uppercase letter.",
+      "passwordNumber": "At least 1 number.",
+      "nameRequired": "Name is required.",
+      "emailRequired": "Email is required.",
+      "emailInvalid": "Please enter a valid email.",
+      "emailExists": "This email is already registered.",
+      "credentials": "Email or password is incorrect."
+    }
+  }
+}

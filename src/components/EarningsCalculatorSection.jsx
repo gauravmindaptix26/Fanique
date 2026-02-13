@@ -1,25 +1,21 @@
 import { useMemo, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max)
 
-const platformOptions = [
-  'OnlyFans',
-  '4based',
-  'more',
-  'Fancentro',
-  'MALOUM',
-]
+const platformOptions = ['OnlyFans', '4based', 'more', 'Fancentro', 'MALOUM']
 
 const EarningsCalculatorSection = () => {
+  const { t, i18n } = useTranslation()
   const [followers, setFollowers] = useState(120000)
   const [hours, setHours] = useState(2)
   const [platforms, setPlatforms] = useState(
-    platformOptions.reduce((acc, platform) => ({ ...acc, [platform]: true }), {})
+    platformOptions.reduce((acc, platform) => ({ ...acc, [platform]: true }), {}),
   )
 
   const platformCount = useMemo(
     () => Object.values(platforms).filter(Boolean).length,
-    [platforms]
+    [platforms],
   )
 
   const monthlyRevenue = useMemo(() => {
@@ -32,6 +28,7 @@ const EarningsCalculatorSection = () => {
 
   const quarterlyRevenue = monthlyRevenue * 3
   const annualRevenue = monthlyRevenue * 12
+  const numberLocale = i18n.language?.startsWith('de') ? 'de-DE' : 'en-US'
 
   const handleFollowersChange = (value) => {
     const next = clamp(Number(value) || 0, 0, 1000000)
@@ -51,9 +48,9 @@ const EarningsCalculatorSection = () => {
     <section className="earnings-section" id="einkommensrechner">
       <div className="earnings-shell">
         <header className="earnings-header">
-          <p className="earnings-eyebrow">OnlyFans Earnings Calculator</p>
-          <h2>OnlyFans Earnings Calculator</h2>
-          <p>Get a clear breakdown of your potential earnings.</p>
+          <p className="earnings-eyebrow">{t('calculator.eyebrow')}</p>
+          <h2>{t('calculator.title')}</h2>
+          <p>{t('calculator.subtitle')}</p>
         </header>
 
         <div className="earnings-grid">
@@ -61,8 +58,8 @@ const EarningsCalculatorSection = () => {
             <div className="earnings-field">
               <div className="earnings-field-header">
                 <div>
-                  <h3>Social Media Followers</h3>
-                  <p>Total followers across all your social media accounts.</p>
+                  <h3>{t('calculator.followersTitle')}</h3>
+                  <p>{t('calculator.followersBody')}</p>
                 </div>
                 <input
                   className="earnings-number"
@@ -91,8 +88,8 @@ const EarningsCalculatorSection = () => {
             <div className="earnings-field">
               <div className="earnings-field-header">
                 <div>
-                  <h3>Daily Content Creation Hours</h3>
-                  <p>How many hours per day do you want to spend creating content?</p>
+                  <h3>{t('calculator.hoursTitle')}</h3>
+                  <p>{t('calculator.hoursBody')}</p>
                 </div>
                 <input
                   className="earnings-number"
@@ -119,7 +116,7 @@ const EarningsCalculatorSection = () => {
             </div>
 
             <div className="earnings-field">
-              <h3>Which platforms should we manage for you?</h3>
+              <h3>{t('calculator.platformsTitle')}</h3>
               <div className="earnings-checklist">
                 {platformOptions.map((platform) => (
                   <label key={platform} className="earnings-check">
@@ -138,34 +135,30 @@ const EarningsCalculatorSection = () => {
 
           <div className="earnings-panel earnings-panel--results">
             <div className="earnings-result">
-              <span>Annual Revenue</span>
-              <strong>${annualRevenue.toLocaleString('en-US')}</strong>
+              <span>{t('calculator.annual')}</span>
+              <strong>${annualRevenue.toLocaleString(numberLocale)}</strong>
             </div>
-            <p className="earnings-result-copy">
-              Your estimated yearly earnings if you work with Fanique Primus, based on the
-              experience of our creators. For more details, please see our terms and conditions.
-            </p>
+            <p className="earnings-result-copy">{t('calculator.resultCopy')}</p>
             <div className="earnings-breakdown">
               <div>
-                <span>Quarterly</span>
-                <strong>${quarterlyRevenue.toLocaleString('en-US')}</strong>
+                <span>{t('calculator.quarterly')}</span>
+                <strong>${quarterlyRevenue.toLocaleString(numberLocale)}</strong>
               </div>
               <div>
-                <span>Monthly</span>
-                <strong>${monthlyRevenue.toLocaleString('en-US')}</strong>
+                <span>{t('calculator.monthly')}</span>
+                <strong>${monthlyRevenue.toLocaleString(numberLocale)}</strong>
               </div>
             </div>
             <div className="earnings-cta">
-              <p>Start Earning Today</p>
-              <button type="button">Inquire Now</button>
+              <p>{t('calculator.ctaTitle')}</p>
+              <button type="button">{t('calculator.ctaButton')}</button>
               <div className="earnings-rating">
-                <span>70+ Rezensionen</span>
-                <span>4.9 ★★★★★</span>
+                <span>{t('calculator.ratingLeft')}</span>
+                <span>
+                  {t('calculator.ratingScore')} &#9733;&#9733;&#9733;&#9733;&#9733;
+                </span>
               </div>
-              <p className="earnings-footnote">
-                Die angezeigten Einnahmen basieren auf Erfahrungswerten und stellen
-                keine Einnahmensgarantie dar.
-              </p>
+              <p className="earnings-footnote">{t('calculator.footnote')}</p>
             </div>
           </div>
         </div>

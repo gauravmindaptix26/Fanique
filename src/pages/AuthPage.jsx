@@ -1,14 +1,8 @@
 import { useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
-
-const strengthLabel = score => {
-  if (score <= 1) return 'Schwach'
-  if (score === 2) return 'Mittel'
-  if (score === 3) return 'Stark'
-  return 'Sehr stark'
-}
 
 const scorePassword = value => {
   let score = 0
@@ -20,6 +14,7 @@ const scorePassword = value => {
 }
 
 const AuthPage = () => {
+  const { t } = useTranslation()
   const navigate = useNavigate()
   const { login, register, user, isAuthenticated } = useAuth()
   const [mode, setMode] = useState('login')
@@ -28,6 +23,8 @@ const AuthPage = () => {
   const [showPassword, setShowPassword] = useState(false)
 
   const passwordScore = useMemo(() => scorePassword(form.password), [form.password])
+  const strengthLabels = t('auth.strength', { returnObjects: true })
+  const strengthLabel = strengthLabels[Math.min(passwordScore, strengthLabels.length - 1)]
 
   const handleChange = (field, value) => {
     setForm(prev => ({ ...prev, [field]: value }))
@@ -39,7 +36,7 @@ const AuthPage = () => {
 
     if (mode === 'register') {
       if (form.password !== form.confirm) {
-        setError('PasswÃ¶rter stimmen nicht Ã¼berein.')
+        setError(t('auth.passwordMismatch'))
         return
       }
       const result = register({
@@ -74,11 +71,9 @@ const AuthPage = () => {
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
             <div className="auth-header">
-              <p className="auth-kicker">Secure Access</p>
-              <h1>{mode === 'login' ? 'Willkommen zurÃ¼ck.' : 'Account erstellen.'}</h1>
-              <p className="auth-sub">
-                Luxus, Klarheit, Performance. Zugang zu deinem exklusiven Bereich.
-              </p>
+              <p className="auth-kicker">{t('auth.kicker')}</p>
+              <h1>{mode === 'login' ? t('auth.titleLogin') : t('auth.titleRegister')}</h1>
+              <p className="auth-sub">{t('auth.sub')}</p>
             </div>
 
             <div className="auth-tabs">
@@ -87,24 +82,24 @@ const AuthPage = () => {
                 className={`auth-tab${mode === 'login' ? ' is-active' : ''}`}
                 onClick={() => setMode('login')}
               >
-                Login
+                {t('auth.login')}
               </button>
               <button
                 type="button"
                 className={`auth-tab${mode === 'register' ? ' is-active' : ''}`}
                 onClick={() => setMode('register')}
               >
-                Register
+                {t('auth.register')}
               </button>
             </div>
 
             <form className="auth-form" onSubmit={handleSubmit}>
               {mode === 'register' && (
                 <label className="auth-field">
-                  <span>Name</span>
+                  <span>{t('auth.name')}</span>
                   <input
                     type="text"
-                    placeholder="Dein Name"
+                    placeholder={t('auth.namePlaceholder')}
                     value={form.name}
                     onChange={event => handleChange('name', event.target.value)}
                     required
@@ -113,7 +108,7 @@ const AuthPage = () => {
               )}
 
               <label className="auth-field">
-                <span>E-Mail</span>
+                <span>{t('auth.email')}</span>
                 <input
                   type="email"
                   placeholder="name@email.com"
@@ -124,11 +119,11 @@ const AuthPage = () => {
               </label>
 
               <label className="auth-field">
-                <span>Passwort</span>
+                <span>{t('auth.password')}</span>
                 <div className="auth-password">
                   <input
                     type={showPassword ? 'text' : 'password'}
-                    placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
+                    placeholder="********"
                     value={form.password}
                     onChange={event => handleChange('password', event.target.value)}
                     required
@@ -138,17 +133,17 @@ const AuthPage = () => {
                     className="auth-password-toggle"
                     onClick={() => setShowPassword(prev => !prev)}
                   >
-                    {showPassword ? 'Hide' : 'Show'}
+                    {showPassword ? t('auth.hide') : t('auth.show')}
                   </button>
                 </div>
               </label>
 
               {mode === 'register' && (
                 <label className="auth-field">
-                  <span>Passwort wiederholen</span>
+                  <span>{t('auth.passwordConfirm')}</span>
                   <input
                     type={showPassword ? 'text' : 'password'}
-                    placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
+                    placeholder="********"
                     value={form.confirm}
                     onChange={event => handleChange('confirm', event.target.value)}
                     required
@@ -159,8 +154,8 @@ const AuthPage = () => {
               {mode === 'register' && (
                 <div className="auth-strength">
                   <div>
-                    <p>Passwort-StÃ¤rke</p>
-                    <span>{strengthLabel(passwordScore)}</span>
+                    <p>{t('auth.passwordStrength')}</p>
+                    <span>{strengthLabel}</span>
                   </div>
                   <div className="auth-strength-bars">
                     {Array.from({ length: 4 }).map((_, index) => (
@@ -176,17 +171,17 @@ const AuthPage = () => {
               {error && <p className="auth-error">{error}</p>}
 
               <button className="auth-submit" type="submit">
-                {mode === 'login' ? 'Login' : 'Account erstellen'}
+                {mode === 'login' ? t('auth.login') : t('auth.register')}
               </button>
             </form>
 
             <div className="auth-footer">
               {isAuthenticated && user ? (
                 <p>
-                  Authentifiziert als <strong>{user.name}</strong>
+                  {t('auth.authenticatedAs')} <strong>{user.name}</strong>
                 </p>
               ) : (
-                <p>Deine Daten bleiben lokal gespeichert.</p>
+                <p>{t('auth.localOnly')}</p>
               )}
             </div>
           </motion.div>

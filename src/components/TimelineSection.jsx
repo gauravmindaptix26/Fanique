@@ -1,29 +1,11 @@
-﻿import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
+import { Trans, useTranslation } from 'react-i18next'
 import gsap from 'gsap'
 
-const steps = [
-  {
-    title: 'Onboarding',
-    text:
-      'Deine Ansprechpartnerin nimmt sich ausreichend Zeit, dich und deine Wunsche kennenzulernen und erklart dir unsere Tools.',
-    side: 'left',
-  },
-  {
-    title: 'Skalierungsphase',
-    text:
-      'Wir starten unser Marketing, um wertvollen Traffic auf deine Profile zu bringen. Ein nahtloser Ubergang ist uns wichtig.',
-    side: 'right',
-  },
-  {
-    title: 'Bindungsphase',
-    text:
-      'Der Fokus wird neben Wachstum vermehrt auf Stabilitat gesetzt, um ein planbares Einkommen zu gewahrleisten. Wir setzen auf Fanbindung statt Massenabfertigung.',
-    side: 'left',
-  },
-]
-
 const TimelineSection = () => {
+  const { t } = useTranslation()
+  const steps = t('timeline.steps', { returnObjects: true })
   const sectionRef = useRef(null)
 
   useEffect(() => {
@@ -53,7 +35,7 @@ const TimelineSection = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          ABLAUF
+          {t('timeline.tag')}
         </motion.p>
         <motion.h2
           className="timeline-title"
@@ -62,8 +44,7 @@ const TimelineSection = () => {
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          Wie du deinen Umsatz in maximal 12 Wochen verdoppelst -{' '}
-          <span>garantiert:</span>
+          <Trans i18nKey="timeline.title" />
         </motion.h2>
         <motion.p
           className="timeline-subtitle"
@@ -72,7 +53,7 @@ const TimelineSection = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
         >
-          Wir generieren schon ab Tag 1 der Betreuung Umsatz in deinem Account.
+          {t('timeline.subtitle')}
         </motion.p>
       </div>
 
@@ -82,7 +63,7 @@ const TimelineSection = () => {
         {steps.map((step) => (
           <div
             key={step.title}
-            className={`timeline-card timeline-card--${step.side}`}
+            className={`timeline-card timeline-card--${step.side || 'left'}`}
             data-timeline="card"
           >
             <h3>{step.title}</h3>
@@ -93,7 +74,7 @@ const TimelineSection = () => {
 
       <div className="timeline-cta">
         <button className="hero-cta hero-cta--primary" type="button">
-          Anfragen
+          {t('timeline.cta')}
         </button>
       </div>
     </section>

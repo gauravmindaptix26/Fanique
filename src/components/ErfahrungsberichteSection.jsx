@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { Trans, useTranslation } from 'react-i18next'
 import gsap from 'gsap'
 import img1 from '../assets/images/Frau in Dessous.jpg'
 import img2 from '../assets/images/Frau in Dessous mit Schleife.jpeg'
@@ -6,42 +7,12 @@ import img3 from '../assets/images/Frau in Dessous mit Mann.jpg'
 import img4 from '../assets/images/Frauen in Limousine.jpeg'
 import img5 from '../assets/images/Brüstekneten4.jpeg'
 
-const cards = [
-  {
-    name: 'Kerstin',
-    image: img1,
-    copy: 'Als erfahrene Creatorin Ã¼ber 1.5 Jahre hinweg Gewinn erhÃ¶hen & mit Respekt behandelt werden.',
-    namePosition: 'left',
-  },
-  {
-    name: 'Sofia',
-    image: img2,
-    copy: 'Mehr Zeit und viel mehr Geld Ã¼ber 2 Jahre Zusammenarbeit hinweg.',
-    namePosition: 'right',
-  },
-  {
-    name: 'Laura Â· Nicole',
-    image: img3,
-    copy: 'Als Beginnerinnen Ã¼ber 1Â½ Jahren hinweg ein stabiles Monatseinkommen erzielen.',
-    namePosition: 'center',
-  },
-  {
-    name: 'Elisa',
-    image: img4,
-    copy: 'Anonym ohne Zeitaufwand Ã¼ber 2 Jahre hinweg ein stabiles Monatseinkommen erzielen.',
-    namePosition: 'right',
-  },
-  {
-    name: 'Tanya',
-    image: img5,
-    copy: 'Ohne Vorerfahrung Ã¼ber 8 Monate hinweg ein stabiles Monatseinkommen erzielen.',
-    namePosition: 'left',
-  },
-]
-
-const loopWords = Array.from({ length: 7 }, () => 'TESTIMONIALS')
+const images = [img1, img2, img3, img4, img5]
 
 const ErfahrungsberichteSection = () => {
+  const { t } = useTranslation()
+  const cards = t('erf.cards', { returnObjects: true })
+  const loopWord = t('erf.loopWord')
   const sectionRef = useRef(null)
 
   useEffect(() => {
@@ -62,6 +33,8 @@ const ErfahrungsberichteSection = () => {
 
     return () => ctx.revert()
   }, [])
+
+  const loopWords = Array.from({ length: 7 }, () => loopWord)
 
   return (
     <section className="erf-testimonials" ref={sectionRef}>
@@ -87,23 +60,25 @@ const ErfahrungsberichteSection = () => {
       </div>
 
       <div className="erf-header" data-erf="fade">
-        <p className="erf-kicker">KUNDENSTIMMEN</p>
+        <p className="erf-kicker">{t('erf.kicker')}</p>
         <h2 className="erf-title">
-          <span className="erf-title-line">Was bringt eine Zusammenarbeit</span>
-          <span className="erf-title-line erf-title-line--accent">mit uns wirklich?</span>
+          <span className="erf-title-line">{t('erf.titleLine1')}</span>
+          <span className="erf-title-line erf-title-line--accent">
+            {t('erf.titleLine2')}
+          </span>
         </h2>
       </div>
 
       <div className="erf-grid">
-        {cards.map((card) => (
+        {cards.map((card, index) => (
           <article key={card.name} className="erf-card" data-erf="fade">
             <div className="erf-card-top">
               <span className="erf-mark">FRA</span>
-              <h3 className="erf-card-title">Kundenstimme</h3>
+              <h3 className="erf-card-title">{t('erf.cardTitle')}</h3>
             </div>
             <p className="erf-card-copy">{card.copy}</p>
             <div className="erf-media">
-              <img src={card.image} alt={card.name} loading="lazy" decoding="async" />
+              <img src={images[index % images.length]} alt={card.name} loading="lazy" decoding="async" />
               <span className="erf-play" aria-hidden="true" />
               <span className={`erf-name erf-name--${card.namePosition}`}>
                 {card.name}
@@ -114,7 +89,7 @@ const ErfahrungsberichteSection = () => {
       </div>
 
       <button className="erf-cta" data-erf="fade" type="button">
-        Anfragen
+        {t('erf.cta')}
       </button>
 
       <div className="erf-growth" data-erf="fade">
@@ -126,11 +101,11 @@ const ErfahrungsberichteSection = () => {
         <div className="erf-growth-top">
           <span className="erf-growth-laurel erf-growth-laurel--left" aria-hidden="true" />
           <div className="erf-growth-topline">
-            <span className="erf-growth-rank">#1 OnlyFans Agentur</span>
-            <div className="erf-growth-stars" aria-label="5 Sterne">
+            <span className="erf-growth-rank">{t('erf.rank')}</span>
+            <div className="erf-growth-stars" aria-label={t('erf.starsAria')}>
               {Array.from({ length: 5 }).map((_, index) => (
                 <span key={`erf-star-top-${index}`} className="erf-star">
-                  â˜…
+                  &#9733;
                 </span>
               ))}
             </div>
@@ -138,33 +113,38 @@ const ErfahrungsberichteSection = () => {
           <span className="erf-growth-laurel erf-growth-laurel--right" aria-hidden="true" />
         </div>
         <div className="erf-growth-tag">
-          <span>Jetzt garantiert wachsen.</span>
-          <span className="erf-growth-sign">Marvin K</span>
+          <span>{t('erf.growthTag')}</span>
+          <span className="erf-growth-sign">{t('erf.signature')}</span>
         </div>
         <h3 className="erf-growth-title">
-          Wir arbeiten mtl. mit 3-5 neuen <span>Creators. GehÃ¶rst du dazu?</span>
+          <Trans i18nKey="erf.growthTitle" />
         </h3>
         <div className="erf-growth-rating">
           <div className="erf-growth-avatars" aria-hidden="true">
-            <img className="erf-growth-avatar" src={img1} alt="" loading="lazy" decoding="async" />
-            <img className="erf-growth-avatar" src={img2} alt="" loading="lazy" decoding="async" />
-            <img className="erf-growth-avatar" src={img3} alt="" loading="lazy" decoding="async" />
-            <img className="erf-growth-avatar" src={img4} alt="" loading="lazy" decoding="async" />
-            <img className="erf-growth-avatar" src={img5} alt="" loading="lazy" decoding="async" />
+            {images.map((image, index) => (
+              <img
+                key={`erf-avatar-${index}`}
+                className="erf-growth-avatar"
+                src={image}
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+            ))}
           </div>
           <div className="erf-growth-review">
-            <div className="erf-growth-review-title">Bestbewertet!</div>
-            <div className="erf-growth-stars erf-growth-stars--gold" aria-label="5 Sterne">
+            <div className="erf-growth-review-title">{t('erf.reviewTitle')}</div>
+            <div className="erf-growth-stars erf-growth-stars--gold" aria-label={t('erf.starsAria')}>
               {Array.from({ length: 5 }).map((_, index) => (
                 <span key={`erf-star-bottom-${index}`} className="erf-star">
-                  â˜…
+                  &#9733;
                 </span>
               ))}
             </div>
-            <div className="erf-growth-review-copy">von 50+ Creators.</div>
+            <div className="erf-growth-review-copy">{t('erf.reviewCopy')}</div>
           </div>
         </div>
-        <div className="erf-growth-pill">HSTUM. CONTENT-RECYCLING</div>
+        <div className="erf-growth-pill">{t('erf.pill')}</div>
       </div>
     </section>
   )

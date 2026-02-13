@@ -2,6 +2,7 @@ import './App.css'
 import 'lenis/dist/lenis.css'
 import { Suspense, lazy, useEffect } from 'react'
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import Lenis from 'lenis'
 import CustomCursor from './components/CustomCursor'
 import Header from './components/Header'
@@ -16,6 +17,7 @@ const AuthPage = lazy(() => import('./pages/AuthPage'))
 
 const AppShell = () => {
   const location = useLocation()
+  const { t } = useTranslation()
   const isErf = location.pathname === '/erfahrungsberichte'
   const isHome = location.pathname === '/'
 
@@ -66,7 +68,7 @@ const AppShell = () => {
       <Header />
 
       <main>
-        <Suspense fallback={<div className="page-loading">Loading...</div>}>
+        <Suspense fallback={<div className="page-loading">{t('common.loading')}</div>}>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/einkommensrechner" element={<EarningsCalculatorPage />} />

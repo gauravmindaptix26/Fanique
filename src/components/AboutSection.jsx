@@ -1,7 +1,9 @@
 import { useEffect, useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import gsap from 'gsap'
 
 const AboutSection = () => {
+  const { t } = useTranslation()
   const sectionRef = useRef(null)
 
   useEffect(() => {
@@ -28,12 +30,12 @@ const AboutSection = () => {
       <div className="about-hero" data-about="fade">
         <div className="about-hero-content">
           <h2 className="about-hero-title" data-about="fade">
-            <span className="about-hero-title-top">OnlyFans Agentur</span>
-            <span className="about-hero-title-bottom">Erfahrungen</span>
+            <span className="about-hero-title-top">{t('about.titleTop')}</span>
+            <span className="about-hero-title-bottom">{t('about.titleBottom')}</span>
           </h2>
-            <p className="about-hero-sub" data-about="fade">
-              Fanique Primus
-            </p>
+          <p className="about-hero-sub" data-about="fade">
+            {t('about.sub')}
+          </p>
         </div>
       </div>
     </section>

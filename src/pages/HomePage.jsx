@@ -4,6 +4,7 @@ import LogoSection from '../components/LogoSection'
 
 const VideoSection = lazy(() => import('../components/VideoSection'))
 const GlobeSection = lazy(() => import('../components/GlobeSection'))
+const GlobeVideoSection = lazy(() => import('../components/GlobeVideoSection'))
 const GuaranteeSection = lazy(() => import('../components/GuaranteeSection'))
 const TestimonialsSection = lazy(() => import('../components/TestimonialsSection'))
 const ManagementSection = lazy(() => import('../components/ManagementSection'))
@@ -47,6 +48,9 @@ const HomePage = () => (
       </LazyMount>
       <LazyMount>
         <GlobeSection />
+      </LazyMount>
+      <LazyMount>
+        <GlobeVideoSection />
       </LazyMount>
       <LazyMount>
         <GuaranteeSection />

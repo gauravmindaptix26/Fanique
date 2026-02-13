@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
+import { Trans, useTranslation } from 'react-i18next'
 import gsap from 'gsap'
 
 const StatsCtaSection = () => {
+  const { t } = useTranslation()
   const sectionRef = useRef(null)
 
   useEffect(() => {
@@ -28,15 +30,15 @@ const StatsCtaSection = () => {
         <div className="stats-cta-top">
           <span className="stats-laurel" aria-hidden="true" />
           <div>
-            <p className="stats-kicker">#1 OnlyFans Agentur</p>
-            <div className="stats-stars">★★★★★</div>
+            <p className="stats-kicker">{t('statsCta.kicker')}</p>
+            <div className="stats-stars" aria-hidden="true">
+              &#9733;&#9733;&#9733;&#9733;&#9733;
+            </div>
           </div>
           <span className="stats-laurel stats-laurel--right" aria-hidden="true" />
         </div>
 
-        <p className="stats-subline">
-          Jetzt garantiert wachsen.
-        </p>
+        <p className="stats-subline">{t('statsCta.subline')}</p>
 
         <motion.h2
           className="stats-title"
@@ -45,8 +47,7 @@ const StatsCtaSection = () => {
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          Wir arbeiten mtl. mit 3-5 neuen Creators.{' '}
-          <span>Gehorst du dazu?</span>
+          <Trans i18nKey="statsCta.title" />
         </motion.h2>
 
         <div className="stats-row" data-stats="float">
@@ -56,9 +57,11 @@ const StatsCtaSection = () => {
             ))}
           </div>
           <div className="stats-rating">
-            <p>Bestbewertet!</p>
-            <div className="stats-stars">★★★★★</div>
-            <p>von 50+ Creators.</p>
+            <p>{t('statsCta.rating')}</p>
+            <div className="stats-stars" aria-hidden="true">
+              &#9733;&#9733;&#9733;&#9733;&#9733;
+            </div>
+            <p>{t('statsCta.ratingSuffix')}</p>
           </div>
         </div>
 
@@ -69,7 +72,7 @@ const StatsCtaSection = () => {
         </div>
 
         <button className="hero-cta hero-cta--primary stats-cta" type="button">
-          Anfragen
+          {t('statsCta.cta')}
         </button>
       </div>
     </section>

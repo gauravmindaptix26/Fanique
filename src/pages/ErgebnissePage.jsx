@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { Trans, useTranslation } from 'react-i18next'
 import gsap from 'gsap'
 import imgA from '../assets/images/Frau in Dessous.jpg'
 import imgB from '../assets/images/Frau in Dessous mit Schleife.jpeg'
@@ -6,65 +7,15 @@ import imgC from '../assets/images/Frauen in Limousine.jpeg'
 import imgD from '../assets/images/Frau sitzt auf Mann.png'
 import imgE from '../assets/images/Paar beim Sex.jpg'
 
-const stats = [
-  { label: 'Avg. Revenue Lift', value: '+3.4x' },
-  { label: 'Client Retention', value: '91%' },
-  { label: 'Launch Velocity', value: '< 14 days' },
-  { label: 'Team Response', value: '< 2 min' },
-]
-
-const cases = [
-  {
-    title: 'Creator A',
-    subtitle: 'Fashion / Lifestyle',
-    before: '12k followers',
-    after: '78k followers',
-    note: 'Monthly revenue stabilized within 6 weeks.',
-    image: imgA,
-  },
-  {
-    title: 'Creator B',
-    subtitle: 'Fitness / Coaching',
-    before: '0.8% conversion',
-    after: '3.2% conversion',
-    note: 'Offer stack rebuilt with premium retention.',
-    image: imgB,
-  },
-  {
-    title: 'Creator C',
-    subtitle: 'Model / Editorial',
-    before: '$4.2k / mo',
-    after: '$18.6k / mo',
-    note: 'Upsell flows and content cadence optimized.',
-    image: imgC,
-  },
-]
-
-const services = [
-  {
-    title: 'Premium Positioning',
-    copy: 'Brand story, offer framing, and pricing designed for high-end value.',
-    image: imgD,
-  },
-  {
-    title: 'Revenue Engineering',
-    copy: 'Launch cadence, upsell systems, and retention sequences.',
-    image: imgE,
-  },
-  {
-    title: 'Content Direction',
-    copy: 'Creative playbooks, shoot briefs, and performance-led feedback.',
-    image: imgB,
-  },
-  {
-    title: 'Client Operations',
-    copy: 'Daily management, fan engagement, and data-driven optimization.',
-    image: imgC,
-  },
-]
-
 const ErgebnissePage = () => {
+  const { t } = useTranslation()
   const pageRef = useRef(null)
+  const stats = t('results.stats', { returnObjects: true })
+  const cases = t('results.cases', { returnObjects: true })
+  const services = t('results.services', { returnObjects: true })
+
+  const caseImages = [imgA, imgB, imgC]
+  const serviceImages = [imgD, imgE, imgB, imgC]
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -90,22 +41,20 @@ const ErgebnissePage = () => {
       <section className="results-hero">
         <div className="results-hero-shell">
           <p className="results-kicker" data-results="fade">
-            Ergebnisse
+            {t('results.kicker')}
           </p>
           <h1 className="results-title" data-results="fade">
-            Premium Wachstum, messbar und dauerhaft.
-            <span> Built for modern creator brands.</span>
+            <Trans i18nKey="results.title" />
           </h1>
           <p className="results-sub" data-results="fade">
-            Wir entwickeln Systeme, die Wachstum, Umsatz und Markenwert in Einklang
-            bringen. Jede Strategie ist auf Skalierung ausgelegt.
+            {t('results.sub')}
           </p>
           <div className="results-cta" data-results="fade">
             <button className="hero-cta hero-cta--primary" type="button">
-              Ergebnisse anfragen
+              {t('results.ctaPrimary')}
             </button>
             <button className="hero-cta hero-cta--ghost" type="button">
-              Strategie ansehen
+              {t('results.ctaSecondary')}
             </button>
           </div>
         </div>
@@ -126,8 +75,8 @@ const ErgebnissePage = () => {
       <section className="results-metrics">
         <div className="results-metrics-shell">
           <div className="results-metrics-header" data-results="fade">
-            <h2>Wachstum auf Premium-Niveau</h2>
-            <p>Bewiesene Systeme aus Strategie, Content und Performance.</p>
+            <h2>{t('results.metricsTitle')}</h2>
+            <p>{t('results.metricsBody')}</p>
           </div>
           <div className="results-metrics-grid">
             {stats.map((item) => (
@@ -143,14 +92,14 @@ const ErgebnissePage = () => {
       <section className="results-cases">
         <div className="results-cases-shell">
           <div className="results-cases-header" data-results="fade">
-            <p className="results-kicker">Case Studies</p>
-            <h2>Was echte Zusammenarbeit bewirkt</h2>
+            <p className="results-kicker">{t('results.casesKicker')}</p>
+            <h2>{t('results.casesTitle')}</h2>
           </div>
           <div className="results-cases-grid">
-            {cases.map((item) => (
+            {cases.map((item, index) => (
               <article key={item.title} className="results-case" data-results="fade">
                 <div className="results-case-media">
-                  <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
+                  <img src={caseImages[index % caseImages.length]} alt={item.title} loading="lazy" decoding="async" />
                 </div>
                 <div>
                   <h3>{item.title}</h3>
@@ -158,11 +107,11 @@ const ErgebnissePage = () => {
                 </div>
                 <div className="results-case-stats">
                   <div>
-                    <span>Vorher</span>
+                    <span>{t('results.before')}</span>
                     <strong>{item.before}</strong>
                   </div>
                   <div>
-                    <span>Nachher</span>
+                    <span>{t('results.after')}</span>
                     <strong>{item.after}</strong>
                   </div>
                 </div>
@@ -176,14 +125,14 @@ const ErgebnissePage = () => {
       <section className="results-services">
         <div className="results-services-shell">
           <div className="results-services-header" data-results="fade">
-            <h2>Die Systeme hinter den Ergebnissen</h2>
-            <p>Luxus-Branding trifft messbare Performance.</p>
+            <h2>{t('results.servicesTitle')}</h2>
+            <p>{t('results.servicesBody')}</p>
           </div>
           <div className="results-services-grid">
-            {services.map((item) => (
+            {services.map((item, index) => (
               <article key={item.title} className="results-service" data-results="fade">
                 <div className="results-service-media">
-                  <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
+                  <img src={serviceImages[index % serviceImages.length]} alt={item.title} loading="lazy" decoding="async" />
                 </div>
                 <h3>{item.title}</h3>
                 <p>{item.copy}</p>

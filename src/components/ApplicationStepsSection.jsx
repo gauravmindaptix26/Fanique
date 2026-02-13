@@ -1,9 +1,12 @@
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
+import { Trans, useTranslation } from 'react-i18next'
 import gsap from 'gsap'
 
 const ApplicationStepsSection = () => {
+  const { t } = useTranslation()
   const sectionRef = useRef(null)
+  const steps = t('applicationSteps.steps', { returnObjects: true })
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -32,7 +35,7 @@ const ApplicationStepsSection = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          BEWERBUNG
+          {t('applicationSteps.tag')}
         </motion.p>
         <motion.h2
           className="steps-title"
@@ -41,37 +44,26 @@ const ApplicationStepsSection = () => {
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          Dein OnlyFans <span>Erfolg</span> startet hier. Planbar.{' '}
-          <span>Step by Step.</span>
+          <Trans i18nKey="applicationSteps.title" />
         </motion.h2>
       </div>
 
       <div className="steps-timeline">
         <div className="steps-line" data-steps="line" aria-hidden="true" />
-        <div className="steps-node" data-steps="node">
-          <span className="steps-number">1</span>
-          <p>
-            Klicke auf <span>&quot;Bewerben&quot;</span>
-          </p>
-        </div>
-        <div className="steps-node" data-steps="node">
-          <span className="steps-number">2</span>
-          <p>
-            Fulle das kurze <span>Formular</span> aus.
-          </p>
-        </div>
-        <div className="steps-node" data-steps="node">
-          <span className="steps-number">3</span>
-          <p>
-            Wir kontaktieren dich <span>in 24 Stunden.</span>
-          </p>
-          <span className="steps-done">Done</span>
-        </div>
+        {steps.map((step, index) => (
+          <div key={step} className="steps-node" data-steps="node">
+            <span className="steps-number">{index + 1}</span>
+            <p dangerouslySetInnerHTML={{ __html: step }} />
+            {index === steps.length - 1 && (
+              <span className="steps-done">{t('applicationSteps.done')}</span>
+            )}
+          </div>
+        ))}
       </div>
 
       <div className="steps-cta">
         <button className="hero-cta hero-cta--primary" type="button">
-          Anfragen
+          {t('applicationSteps.cta')}
         </button>
       </div>
     </section>

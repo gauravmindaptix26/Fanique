@@ -1,8 +1,10 @@
-﻿import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
+import { Trans, useTranslation } from 'react-i18next'
 import gsap from 'gsap'
 
 const PlatformsSection = () => {
+  const { t } = useTranslation()
   const sectionRef = useRef(null)
 
   useEffect(() => {
@@ -62,14 +64,14 @@ const PlatformsSection = () => {
           transition={{ duration: 0.7, ease: 'easeOut' }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <p className="platforms-tag" data-platforms="fly-left">PLATTFORMEN</p>
+          <p className="platforms-tag" data-platforms="fly-left">
+            {t('platforms.tag')}
+          </p>
           <h2 className="platforms-title" data-platforms="fly-right">
-            Content Recycling war noch nie <span>so einfach.</span>
+            <Trans i18nKey="platforms.title" />
           </h2>
-            <p className="platforms-body" data-platforms="fly-left">
-              Fanique Primus ist die einzige OnlyFans-Agentur, mit der du deine Inhalte
-              gleichzeitig auf funf Plattformen verkaufen kannst - so kannst du dein
-              Einkommen verfunffachen.
+          <p className="platforms-body" data-platforms="fly-left">
+            {t('platforms.body')}
           </p>
         </motion.div>
 
@@ -117,10 +119,10 @@ const PlatformsSection = () => {
           data-platforms="fly-right"
         >
           <button className="hero-cta hero-cta--primary" type="button">
-            Anfragen
+            {t('platforms.ctaPrimary')}
           </button>
           <button className="hero-cta hero-cta--ghost" type="button">
-            Alle Plattformen
+            {t('platforms.ctaSecondary')}
           </button>
         </motion.div>
       </div>

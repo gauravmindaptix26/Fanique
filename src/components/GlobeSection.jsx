@@ -1,9 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import Globe from 'react-globe.gl'
 
 const DATA_URL = 'https://unpkg.com/globe.gl/example/datasets/world_population.csv'
 
 const GlobeSection = () => {
+  const { t } = useTranslation()
   const wrapRef = useRef(null)
   const globeRef = useRef(null)
   const [size, setSize] = useState({ width: 720, height: 720 })
@@ -79,15 +81,16 @@ const GlobeSection = () => {
   }, [points])
 
   const pointColor = (d) => {
-    const t = d.pop / maxPop
-    const hue = (0.6 - t * 0.5) * 360
+    const tValue = d.pop / maxPop
+    const hue = (0.6 - tValue * 0.5) * 360
     return `hsl(${hue}, 100%, 55%)`
   }
 
   return (
     <section className="globe-section globe-section--solo">
       <h2 className="globe-heading">
-        <span>WE are</span> Globe
+        <span>{t('globe.weAre')}</span>
+        {t('globe.global')}
       </h2>
       <div className="globe-stage" ref={wrapRef}>
         <Globe

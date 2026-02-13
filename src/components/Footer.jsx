@@ -1,8 +1,13 @@
-﻿import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import gsap from 'gsap'
 import logo from '../assets/images/fanique_white_text.png'
 
 const Footer = () => {
+  const { t } = useTranslation()
+  const serviceLinks = t('footer.serviceLinks', { returnObjects: true })
+  const followLinks = t('footer.followLinks', { returnObjects: true })
+  const resourceLinks = t('footer.resourceLinks', { returnObjects: true })
   const footerRef = useRef(null)
 
   useEffect(() => {
@@ -86,39 +91,40 @@ const Footer = () => {
 
         <div className="fp-links">
           <div className="fp-col">
-            <p className="fp-title">Dienstleistungen</p>
-            <a href="#services">Management</a>
-            <a href="#services">Marketing</a>
-            <a href="#services">Inhaltsrecycling</a>
-            <a href="#services">Leckbeseitigung</a>
+            <p className="fp-title">{t('footer.servicesTitle')}</p>
+            {serviceLinks.map((link) => (
+              <a key={link} href="#services">
+                {link}
+              </a>
+            ))}
           </div>
 
           <div className="fp-col">
-            <p className="fp-title">Verfolgen</p>
-            <a href="#about">Portfoliomodell</a>
-            <a href="#about">Fallstudien</a>
-            <a href="#about">Über uns</a>
-            <a href="#about">Team</a>
-            <a href="#about">Ergebnis</a>
+            <p className="fp-title">{t('footer.followTitle')}</p>
+            {followLinks.map((link) => (
+              <a key={link} href="#about">
+                {link}
+              </a>
+            ))}
           </div>
 
           <div className="fp-col">
-            <p className="fp-title">Ressourcen</p>
-            <a href="#resources">Modellregistrierung</a>
-            <a href="/einkommensrechner">Einkommensrechner</a>
-            <a href="#resources">Erfahrung</a>
-            <a href="#resources">Dienstleistungen</a>
-            <a href="#resources">Kontakt</a>
+            <p className="fp-title">{t('footer.resourcesTitle')}</p>
+            <a href="#resources">{resourceLinks[0]}</a>
+            <a href="/einkommensrechner">{resourceLinks[1]}</a>
+            <a href="#resources">{resourceLinks[2]}</a>
+            <a href="#resources">{resourceLinks[3]}</a>
+            <a href="#resources">{resourceLinks[4]}</a>
           </div>
         </div>
 
         <div className="fp-contact-card">
-          <p className="fp-title">Kontakt</p>
+          <p className="fp-title">{t('footer.contactTitle')}</p>
           <div className="fp-person">
             <span className="fp-avatar" aria-hidden="true" />
             <div>
               <p className="fp-person-name">Alina Meyer</p>
-              <p className="fp-person-meta">Fragen? Antworten</p>
+              <p className="fp-person-meta">{t('footer.contactMeta')}</p>
             </div>
           </div>
           <button className="fp-whatsapp" type="button">
@@ -130,7 +136,7 @@ const Footer = () => {
                 />
               </svg>
             </span>
-            Direkt per WhatsApp
+            {t('footer.whatsapp')}
           </button>
           <div className="fp-social">
             <span className="fp-social-icon" aria-hidden="true">
@@ -188,11 +194,11 @@ const Footer = () => {
       <div className="fp-sep fp-sep--bottom" aria-hidden="true" />
 
       <div className="fp-bottom">
-        <p>Copyright c 2025 FANIQUE PRIMUS</p>
+        <p>{t('footer.copyright')}</p>
         <div className="fp-bottom-links">
-          <a href="#legal">Rechtlicher Hinweis</a>
-          <a href="#legal">Datenschutzrichtlinie</a>
-          <a href="#legal">Nutzungsbedingungen</a>
+          <a href="#legal">{t('footer.legal')}</a>
+          <a href="#legal">{t('footer.privacy')}</a>
+          <a href="#legal">{t('footer.terms')}</a>
         </div>
       </div>
     </footer>

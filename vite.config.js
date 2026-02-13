@@ -7,13 +7,14 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   assetsInclude: ['**/*.glb'],
   build: {
-    chunkSizeWarningLimit: 900,
+    chunkSizeWarningLimit: 2000,
     rollupOptions: {
       output: {
         manualChunks: {
           router: ['react-router-dom'],
           motion: ['framer-motion', 'motion'],
           gsap: ['gsap'],
+          globe: ['react-globe.gl', 'three', 'three-globe'],
         },
       },
     },

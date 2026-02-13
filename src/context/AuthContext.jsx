@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import i18n from '../i18n'
 
 const AuthContext = createContext(null)
 
@@ -25,9 +26,9 @@ const writeJson = (key, value) => {
 }
 
 const validatePassword = password => {
-  if (password.length < 8) return 'Mindestens 8 Zeichen.'
-  if (!/[A-Z]/.test(password)) return 'Mindestens 1 GroÃŸbuchstabe.'
-  if (!/[0-9]/.test(password)) return 'Mindestens 1 Zahl.'
+  if (password.length < 8) return i18n.t('auth.errors.passwordLength')
+  if (!/[A-Z]/.test(password)) return i18n.t('auth.errors.passwordUpper')
+  if (!/[0-9]/.test(password)) return i18n.t('auth.errors.passwordNumber')
   return ''
 }
 
@@ -45,15 +46,15 @@ export const AuthProvider = ({ children }) => {
 
   const register = ({ name, email, password }) => {
     const normalizedEmail = email.trim().toLowerCase()
-    if (!name.trim()) return { ok: false, error: 'Name ist erforderlich.' }
-    if (!normalizedEmail) return { ok: false, error: 'E-Mail ist erforderlich.' }
+    if (!name.trim()) return { ok: false, error: i18n.t('auth.errors.nameRequired') }
+    if (!normalizedEmail) return { ok: false, error: i18n.t('auth.errors.emailRequired') }
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(normalizedEmail)) {
-      return { ok: false, error: 'Bitte eine gÃ¼ltige E-Mail eingeben.' }
+      return { ok: false, error: i18n.t('auth.errors.emailInvalid') }
     }
     const passError = validatePassword(password)
     if (passError) return { ok: false, error: passError }
     if (users.some(entry => entry.email === normalizedEmail)) {
-      return { ok: false, error: 'Diese E-Mail ist bereits registriert.' }
+      return { ok: false, error: i18n.t('auth.errors.emailExists') }
     }
 
     const newUser = {
@@ -73,7 +74,7 @@ export const AuthProvider = ({ children }) => {
     const match = users.find(
       entry => entry.email === normalizedEmail && entry.password === password,
     )
-    if (!match) return { ok: false, error: 'E-Mail oder Passwort ist falsch.' }
+    if (!match) return { ok: false, error: i18n.t('auth.errors.credentials') }
     setUser({ id: match.id, name: match.name, email: match.email })
     return { ok: true }
   }
